@@ -13,12 +13,7 @@ ul, ol {
 }
 
 body {
-  margin: 0px;
   overflow: hidden;
-}
-
-html {
-
 }
 
 .actions {
@@ -26,6 +21,21 @@ html {
   top: 0;
   left: 0;
   padding: 20px;
+}
+
+.actions svg#clear {
+  width: 2em;
+  height: 2em;
+  transition: all 0.3s;
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  transition: all 0.3s;
+}
+
+.actions svg#clear.bigger {
+  transform: scale(1.2);
+  color: red;
 }
 
 .actions svg#brush {
@@ -44,7 +54,6 @@ html {
 .actions svg.active {
   fill: red;
   transform: scale(1.2);
-  
 }
 
 .colors {
@@ -53,7 +62,7 @@ html {
   left: 19px;
 }
 
-.colors> li {
+.colors>li {
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -62,21 +71,45 @@ html {
   transition: all 0.3s;
 }
 
-.colors> li.black {
+.colors>li.black {
   background: black;
 }
 
-.colors> li.red {
+.colors>li.red {
   background: red;
 }
-.colors> li.green {
+
+.colors>li.green {
   background: green;
 }
-.colors> li.blue {
+
+.colors>li.blue {
   background: blue;
 }
 
-.colors> li.active{
+.colors>li.active {
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.95);
   transform: scale(1.2);
+}
+
+.sizes {
+  position: fixed;
+  right: 10px;
+  top: 45px;
+}
+
+.sizes>li {
+  margin: 20px 0;
+}
+
+.sizes>.thin {
+  height: 0;
+  width: 20px;
+  border-top: 3px solid black;
+}
+
+.sizes>.thick {
+  height: 0;
+  width: 20px;
+  border-top: 6px solid black;
 }

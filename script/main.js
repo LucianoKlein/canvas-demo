@@ -5,11 +5,19 @@ autoSetCanvasSize(yyy);
 listenToUser(yyy);
 
 var eraserEnabled = false;
+var lineWidth = 5;
+
 brush.onclick = function() {
   eraserEnabled = false;
 
   brush.classList.add('active');
   eraser.classList.remove('active');
+}
+
+clear.onclick = function() {
+  clear.classList.add('bigger');
+  context.clearRect(0, 0, yyy.width, yyy.height);
+  setTimeout("clear.classList.remove('bigger');", 100);
 }
 
 eraser.onclick = function() {
@@ -70,6 +78,14 @@ function autoSetCanvasSize(canvas) {
   }
 }
 
+thin.onclick = function() {
+  lineWidth = 5;
+}
+
+thick.onclick = function() {
+  lineWidth = 10;
+}
+
 function listenToUser(canvas) {
   var context = canvas.getContext('2d');
   var mousingdown = false;
@@ -115,7 +131,7 @@ function listenToUser(canvas) {
     function drawLine(x1, y1, x2, y2) {
       context.beginPath();
       context.moveTo(x1, y1); // 起点
-      context.lineWidth = 5;
+      context.lineWidth = lineWidth;
       context.lineTo(x2, y2); // 终点
       context.stroke();
       context.closePath();
@@ -124,7 +140,7 @@ function listenToUser(canvas) {
     function drawCircle(x, y, radius) {
       context.beginPath();
       context.fillStyle = context.strokeStyle;
-      context.arc(x, y, radius, 0, Math.PI * 2);
+      context.arc(x, y, lineWidth / 2, 0, Math.PI * 2);
       context.fill();
     }
   })
@@ -195,7 +211,7 @@ function listenToUser(canvas) {
     function drawLine(x1, y1, x2, y2) {
       context.beginPath();
       context.moveTo(x1, y1); // 起点
-      context.lineWidth = 5;
+      context.lineWidth = lineWidth;
       context.lineTo(x2, y2); // 终点
       context.stroke();
       context.closePath();
@@ -204,7 +220,7 @@ function listenToUser(canvas) {
     function drawCircle(x, y, radius) {
       context.fillStyle = context.strokeStyle;
       context.beginPath();
-      context.arc(x, y, radius, 0, Math.PI * 2);
+      context.arc(x, y, lineWidth / 2, 0, Math.PI * 2);
       context.fill();
     }
   }
