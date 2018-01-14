@@ -63,6 +63,20 @@ blue.onclick = function() {
   green.classList.remove('active');
 }
 
+download.onclick = function() {
+  var url = yyy.toDataURL("image/png");
+  var a = document.createElement('a');
+  document.body.appendChild(a);
+
+  a.href = url;
+  a.download = '我的画儿';
+  a.target = '_blank';
+  a.click();
+
+  download.classList.add('bigger');
+  setTimeout('download.classList.remove("bigger")', 100);
+}
+
 /***/
 function autoSetCanvasSize(canvas) {
   adjust();

@@ -23,6 +23,10 @@ body {
   padding: 20px;
 }
 
+.actions svg#download.bigger {
+  transform: scale(1.2);
+  color: red;
+}
 
 .actions svg#clear {
   width: 2em;
@@ -46,8 +50,8 @@ body {
 }
 
 .actions svg#download {
-  width: 2em;
-  height: 2em;
+  width: 2.1em;
+  height: 2.1em;
   transition: all 0.3s;
   padding-left: 20px;
 }
