@@ -14,17 +14,17 @@ brush.onclick = function() {
   eraser.classList.remove('active');
 }
 
-clear.onclick = function() {
-  clear.classList.add('bigger');
-  context.clearRect(0, 0, yyy.width, yyy.height);
-  setTimeout("clear.classList.remove('bigger');", 100);
-}
-
 eraser.onclick = function() {
   eraserEnabled = true;
 
   eraser.classList.add('active');
   brush.classList.remove('active');
+}
+
+clear.onclick = function() {
+  clear.classList.add('bigger');
+  context.clearRect(0, 0, yyy.width, yyy.height);
+  setTimeout("clear.classList.remove('bigger');", 100);
 }
 
 black.onclick = function() {
@@ -197,15 +197,6 @@ function listenToUser(canvas) {
         drawLine(lastPoint.x, lastPoint.y, newPoint.x, newPoint.y);
         lastPoint = newPoint;
       }
-    }
-    eraser.onclick = function () {
-      eraserEnabled = true;
-      actions.className = 'actions x';
-    }
-
-    brush.onclick = function () {
-      eraserEnabled = false;
-      actions.className = 'actions';
     }
 
     function drawLine(x1, y1, x2, y2) {

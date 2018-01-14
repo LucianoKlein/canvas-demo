@@ -23,6 +23,7 @@ body {
   padding: 20px;
 }
 
+
 .actions svg#clear {
   width: 2em;
   height: 2em;
@@ -44,6 +45,13 @@ body {
   transition: all 0.3s;
 }
 
+.actions svg#download {
+  width: 2em;
+  height: 2em;
+  transition: all 0.3s;
+  padding-left: 20px;
+}
+
 .actions svg#eraser {
   width: 2.1em;
   height: 2.1em;
@@ -55,6 +63,8 @@ body {
   fill: red;
   transform: scale(1.2);
 }
+
+
 
 .colors {
   position: fixed;
